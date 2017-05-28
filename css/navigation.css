@@ -1,0 +1,351 @@
+header{
+  position: fixed;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+}
+header .horiz_logo{
+  padding: 10px;
+  position: absolute;
+  left: -250px;
+  top:0;
+  text-align: left;
+  width: 225px;
+  opacity: 0;
+}
+nav{
+  display: inline-block;
+  cursor: default;
+}
+nav .social{
+  display: none;
+}
+nav ul > li a{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: .75em;
+  position: relative;
+}
+nav ul > li > ul a{
+  font-size: .9em;
+  padding: .5em .7em;
+}
+nav > ul ul li:last-child{
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+}
+.menu-btn{
+  display: none;
+}
+
+.top-nav-expand{ background-color: rgba(30,30,30,.9);}
+.top-nav-expand nav a{ padding: 20px 0;}
+.top-nav-expand .horiz_logo{ left: 0; opacity: 1}
+.top-nav-collapse{ visibility: hidden;opacity: 0; z-index: -1;}
+
+/*==================================================
+#Media Queries
+================================================== */
+
+/* Note: Design for a width of 768px and larger */
+@media only screen and (min-width: 768px) {
+  .tnlbc{
+    display: inline-block;
+  }
+  nav > ul{
+    list-style:none;
+    margin: 0;
+  }
+  nav > ul > li{
+    display: inline-block;
+    position:relative;
+  }
+  nav > ul a{
+    display:block;
+    padding:38px 0 10px;
+    margin: 0 15px;
+  }
+  nav > ul a:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    margin: auto;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -moz-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -webkit-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -o-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  }
+  nav > ul a:hover:before{
+    /*width: 100%;*/
+  }
+
+  /*--- DROPDOWN ---*/
+  nav > ul ul{
+    background:#fff;
+    background:rgba(255,255,255,0);
+    list-style:none;
+    position:absolute;
+    left:-9999px;
+    min-width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    border-radius: 5px;
+  }
+  nav.pushy-right > ul ul{
+    left: auto;
+    right: -9999px;
+  }
+  nav > ul ul a{
+    white-space:nowrap;
+  }
+  nav > ul > li:hover ul{
+    left:0;
+    z-index: 10;
+  }
+  nav.pushy-right > ul > li:hover ul{
+    left:auto;
+    right: 0;
+    z-index: 10;
+  }
+  nav > ul > li a:hover, nav > ul > li a.nav-active{
+    color: #b7d234;
+  }
+  nav > ul > li a.nav-active:before{
+    box-shadow: 0 4px 0 #b7d234 inset;
+    width: 100%;
+  }
+
+  nav > ul > li:hover ul li a:hover{
+    background:#171617;
+    color: #fff;
+  }
+
+
+}
+
+/* Note: Design for a width of 768px and smaller */
+@media only screen and (max-width: 768px) {
+
+  .menu-btn{
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+  }
+  header, .top-nav-expand{
+    z-index: 9999;
+    text-align: left;
+    background-color: rgba(0,0,0,.4);
+  }
+  header .horiz_logo, .top-nav-expand .horiz_logo{
+    left: 52px;
+    opacity: 1;
+  }
+  nav .social{
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    direction: rtl;
+  }
+  nav .social a, .top-nav-expand .social a{
+    display: inline-block ;
+    padding: 10px;
+  }
+  nav .social a svg{
+    width: 17px;
+    height: 17px;
+  }
+  /*! Pushy - v1.0.0 - 2016-3-1
+* Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
+* https://github.com/christophery/pushy/
+* by Christopher Yee */
+  /* Menu Appearance */
+  .pushy {
+    position: fixed;
+    width: 200px;
+    /*height: 100vh;*/
+    height: 100%;
+    top: 0;
+    z-index: 9999;
+    background:#2e2e2e;
+    overflow: auto;
+    visibility: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* enables momentum scrolling in iOS overflow elements */
+  }
+  .pushy a, .top-nav-expand nav a {
+    display: block;
+    color: #fff;
+    padding: 20px;
+    outline: 0;
+  }
+  .pushy a:hover{
+    background-color: #292929;
+    color: #b7d333;
+  }
+  .pushy a.nav-active{
+    box-shadow:3px 0 0 #b7d333 inset;
+    color:#b7d333;
+    background-color: #202020;
+  }
+  .pushy ul {
+    margin: 0;
+  }
+  .pushy.pushy-left {
+    left: 0;
+  }
+  .pushy.pushy-right {
+    right: 0;
+  }
+
+  /* Menu Movement */
+  .pushy-left {
+    -webkit-transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-200px, 0, 0);
+  }
+
+  .pushy-open-left #container,
+  .pushy-open-left .push {
+    -webkit-transform: translate3d(200px, 0, 0);
+    transform: translate3d(200px, 0, 0);
+  }
+
+  .pushy-right {
+    -webkit-transform: translate3d(200px, 0, 0);
+    transform: translate3d(200px, 0, 0);
+  }
+
+  .pushy-open-right #container,
+  .pushy-open-right .push {
+    -webkit-transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-200px, 0, 0);
+  }
+
+  .pushy-open-left .pushy,
+  .pushy-open-right .pushy {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Menu Transitions */
+  #container,
+  .pushy,
+  .push {
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    transition: -webkit-transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    transition: transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    transition: transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99), -webkit-transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  }
+
+  /* Site Overlay */
+  .site-overlay {
+    display: none;
+  }
+
+  .pushy-open-left .site-overlay,
+  .pushy-open-right .site-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9998;
+    background-color: rgba(0, 0, 0, 0.75);
+    -webkit-animation: fade 500ms;
+    animation: fade 500ms;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /* Submenu Appearance */
+  .pushy-submenu {
+    /* Submenu Icon */
+  }
+  .pushy-submenu ul {
+    padding-left: 15px;
+    -webkit-transition: max-height 0.2s ease-in-out;
+    transition: max-height 0.2s ease-in-out;
+  }
+  .pushy-right .pushy-submenu ul {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+  .pushy-submenu ul .pushy-link {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+  }
+  .pushy-submenu > a {
+    position: relative;
+  }
+  .pushy-submenu > a::after {
+    content: '';
+    display: block;
+    height: 11px;
+    width: 8px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    /*background: url("../img/arrow.svg") no-repeat;*/
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+  }
+  .pushy-right .pushy-submenu > a::after {
+    right: auto;
+    left: 15px;
+    webkit-transform: translateY(-50%) rotate(180deg);
+    -webkit-transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  /* Submenu Movement */
+  .pushy-submenu-closed ul {
+    max-height: 0;
+    overflow: hidden;
+  }
+  .pushy-submenu-closed .pushy-link {
+    opacity: 0;
+  }
+
+  .pushy-submenu-open {
+    background-color: #171617;
+  }
+  .pushy-submenu-open ul {
+    max-height: 1000px;
+  }
+  .pushy-submenu-open .pushy-link {
+    opacity: 1;
+  }
+  .pushy-submenu-open a::after, .pushy-right .pushy-submenu-open a::after {
+    -webkit-transform: translateY(-50%) rotate(90deg);
+    transform: translateY(-50%) rotate(90deg);
+  }
+  .no-csstransforms3d .pushy-submenu-closed ul {
+    max-height: none;
+    display: none;
+  }
+
+}
