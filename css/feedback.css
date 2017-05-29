@@ -1,0 +1,34 @@
+/*==================================================
+start page style
+================================================== */
+
+body {
+    /*background-color: #F3AE17;*/
+    background-color: #E36E0E;
+}
+.main_container{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.bg,.feedback_container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.start_new_game{
+  margin-top: 50px;
+  position: relative;
+  z-index: 999;
+}
+.start_new_game a{
+  display: block;
+}
+.feedback_container{
+  width: 25%;
+  display: table;
+}
