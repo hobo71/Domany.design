@@ -4,7 +4,7 @@
   //Variables
         var master = new TimelineMax(), //my master timeline
             mainContainer = $('.main_container'),
-            sky = $('.quiz'),
+            sky = $('.main-Scene'),
             road = $('.road'),
             staggerIn = $('.stagger_in'),
             roadPath = $('#road_path path'),
@@ -22,8 +22,8 @@
             skyLine4Two = $('.sky_line_4 .two'),
             skyLine4Three = $('.sky_line_4 .three'),
             skyLine4Four = $('.sky_line_4 .four'),
-            car = $('.car'),
-            carBody = $('#car_body'),
+            scooter = $('.scooter'),
+            scooterBody = $('.scooter-body'),
             spotLight = $('.spotLight'),
             reflection = $('#reflection'),
             smoke = $('.smoke_unit_div'),
@@ -36,20 +36,13 @@
             sun = $('.sun'),
             sunlight = $('.sunlight'),
             moon = $('.moon'),
-            nextButton = $('.next_btn'),
-            nextButtonHead = $('.sign_head'),
-            questionContainer = $('.question_container'),
-            quizTitle = $('.quiz_title'),
-            question = $('.question'),
-            answer = $('.answer'),
             wheel = $('.wheel');
 
 
         // the master time-line setup
         master
             .add(sceneInAnimation())
-            .add(RepeatedAnimations(), 0)
-            .add(questionInAnimaton(), 2);
+            .add(RepeatedAnimations(), 0);
 
 
         // change the scene to night
@@ -58,7 +51,7 @@
           var tl = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:10}); //my reapeated timeline
           tl.to(sky, globalDuration, { backgroundColor: "#362f73",ease: Power4.easeOut },0)
             .to(road, globalDuration, { backgroundColor: "#2e2749",ease: Power4.easeOut },0)
-            .to(roadPath, globalDuration, { opacity: .3,ease: Power4.easeOut },0)
+            .to(roadPath, globalDuration, { opacity: .4,ease: Power4.easeOut },0)
             .to(skyLine1Path, globalDuration, { fill:'#212442',ease: Power4.easeOut },0)
             .to(skyLine2Path, globalDuration, { fill:'#211a3d',ease: Power4.easeOut },0)
             .to(skyLine3Trees, globalDuration, { fill:'#211a3d',ease: Power4.easeOut },0)
@@ -73,7 +66,7 @@
             .to(starsContainer, globalDuration, { opacity:'1',ease: Power4.easeOut },0)
             .to(spotLight, .1, { opacity:'1',ease: Power4.easeOut },0)
             .to(moon, 1.2, { top:'150px',ease: Back.easeInOut.config(1.5)},0)
-            .to(sun, 1.2, { top:'700px',ease: Back.easeInOut.config(1.5)},0)
+            .to(sun, 1.2, { top:'700px',ease: Back.easeInOut.config(1.5)},0);
 
           return tl;
         }
@@ -116,7 +109,7 @@
                 TweenMax.to(stars[n], randomBetween(.5,1.5),{
                     alpha: randomBetween(0, 10) / 10,
                     attr: {
-                        r:'+=1',
+                        r:'+=1'
                     },
                     delay:randomBetween(.1,1),
                     repeat:-1,
@@ -133,7 +126,7 @@
             var tl = new TimelineMax(); //my reapeated timeline
             tl.staggerFrom(staggerIn, 1, { bottom: '-70%', scaleY: "0", ease: Back.easeOut.config(1.9) }, -.05)
                 .from(road, 1, { bottom: '-30%', height: "0", ease: Power4.easeOut}, 0)
-                .to(car, 5, { left: '+=650px', ease: Power4.easeOut }, 0)
+                .to(scooter, 5, { left: '+=650px', ease: Power4.easeOut }, 0)
                 .from(sun,1.5, { scale: 0,ease: Elastic.easeOut.config(1, 0.5),delay:1}, 0);
             return tl;
         }
@@ -144,7 +137,7 @@
             reapeated
                 .add(roadAnimation(), 0)
                 .add(skyLineAnimation(), 0)
-                .add(carAnimation(), 0)
+                .add(scooterAnimation(), 0)
                 .add(smokeAnimation(), 0)
                 .add(cloudsAnimation(), 0)
                 .add(sunAnimation(), 0)
@@ -171,17 +164,17 @@
         }
 
 
-        // car animation
-        function carAnimation() {
+        // scooter animation
+        function scooterAnimation() {
             var tl = new TimelineMax();
-            tl.to(wheel, .5, { rotation: "+=360", transformOrigin: "50% 50%", ease: Linear.easeNone, repeat: -1 }, 0)
-                .to([carBody,spotLight], .4, { y: "+=6", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0)
-                .to(car, 4, { x: "+=100", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0);
+            tl.to(wheel, .7, { rotation: "+=360", transformOrigin: "50% 50%", ease: Linear.easeNone, repeat: -1 }, 0)
+                .to([scooterBody,spotLight], .4, { y: "+=6", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0)
+                .to(scooter, 4, { x: "+=100", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0);
             return tl;
         }
 
 
-        // car smoke animation
+        // scooter smoke animation
         function smokeAnimation() {
             var tl = new TimelineMax();
             tl.staggerFromTo(smoke, .8, { right: 0, ease: Linear.easeNone }, { right: "92%", ease: Linear.easeNone, repeat: -1 }, .15, 0)
@@ -208,56 +201,6 @@
             return tl;
         }
 
-
-        // question in animation
-        function questionInAnimaton() {
-            var tl = new TimelineMax();
-            tl.set(questionContainer, { scale: 1 })
-                .from(quizTitle, 1.5, { scale: 0, transformOrigin: 'center center', transformOrigin: '50% 50%', ease: Elastic.easeOut.config(1, 0.4) })
-                .from(question, 1.5, { scale: 0, transformOrigin: 'center center', transformOrigin: '50% 50%', ease: Elastic.easeOut.config(1, 0.4) }, '-=1.2')
-                .staggerFrom(answer, .7, { scale: 0, transformOrigin: 'center center', transformOrigin: '50% 50%', ease: Elastic.easeOut.config(1, 0.4) }, .15, '-=1.2');
-            return tl;
-        }
-        // $scope.questionIn = function() {
-        //     questionInAnimaton();
-        // }
-
-        // question out animation
-        function questionOutAnimaton() {
-            var tl = new TimelineMax();
-            tl.to(questionContainer, .5, { scale: 0, transformOrigin: '50% 50%', ease: Power4.easeOut });
-            return tl;
-        }
-        // $scope.questionOut = function() {
-        //     questionOutAnimaton();
-        // }
-
-
-        // next button animation
-        function nextButtonAnimaton() {
-            var tl = new TimelineMax();
-            tl.to(nextButton, .7, { rotation: 0, transformOrigin: '0 100%', ease: Power4.easeOut }, 0)
-                .from(nextButtonHead, 1.5, { rotation: "+=35", transformOrigin: '20% 70%', ease: Elastic.easeOut.config(1, 0.4), delay: .2 }, 0);
-            return tl;
-        }
-
-        // $scope.showNextButton = function() {
-        //     if ($scope.selected < 0) {
-        //         nextButtonAnimaton();
-        //     }
-        // }
-        //
-        // // next button animation out
-        // function nextButtonOutAnimaton() {
-        //     var tl = new TimelineMax();
-        //     tl.to(nextButton, .7, { rotation: 180, transformOrigin: '0 100%', ease: Power4.easeOut }, 0)
-        //         .from(nextButtonHead, 1.5, { rotation: "-=35", transformOrigin: '20% 70%', ease: Elastic.easeOut.config(1, 0.4), delay: .2 }, 0);
-        //     return tl;
-        // }
-        //
-        // $scope.hideNextButton = function() {
-        //     nextButtonOutAnimaton();
-        // }
 
 
 })(jQuery,MorphSVGPlugin,TimelineMax);
