@@ -239,7 +239,7 @@ main page style
 ================================================== */
 
 .main-Scene {
-    background-color: #F3AE17;
+    background-color: #46d6f7;
     position: relative;
     height: 100vh;
     overflow: hidden;
@@ -254,7 +254,7 @@ img {
     background-color: #724D34;
     position: absolute;
     bottom: 0;
-    height: 170px;
+    height: 150px;
     width: 100%;
     z-index: 50;
 }
@@ -299,23 +299,26 @@ img {
 
 .scooter {
     position: absolute;
-    bottom: 70px;
-    /*left: -500px;*/
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
     width: 280px;
     height: 315px;
     z-index: 60;
 }
 .scooter svg{
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
+    left: -25px;
 }
 .spotLight{
-  position: absolute;
-  width: 700px;
-  left: calc(100% - 80px);
-  top: 140px;
-  z-index: 2;
-  opacity: 0;
+    position: absolute;
+    width: 700px;
+    left: calc(100% - 80px);
+    top: 140px;
+    z-index: 2;
+    opacity: 0;
 }
 .smoke {
     width: 130px;
@@ -324,7 +327,7 @@ img {
     bottom: 4px;
     overflow: hidden;
     opacity: .4;
-    right: 230px;
+    right: 250px;
 }
 
 .smoke_unit_div {
@@ -345,21 +348,27 @@ img {
 }
 .stars  svg{
   width: 100%;
-  height: 50vh;
+  height: 60vh;
 }
-.sun{
-  width: 75px;
-  height: 75px;
+.sun,.sun:after{
+  width: 60px;
+  height: 60px;
   border-radius: 100px;
   position: absolute;
   top: 150px;
   right: 18%;
   z-index: 2;
-  background-color: #FFDB45;
+}
+.sun:after{
+    content: '';
+    z-index: 2;
+    top:0;
+    left: 0;
+    background-color: #FFE048;
 }
 .sunlight{
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   border-radius: 100px;
   position: absolute;
   top: 0;
@@ -367,12 +376,12 @@ img {
   right: 0;
   bottom: 0;
   z-index: 0;
-  background-color: #FFDB45;
-  opacity: .5;
+  background-color: #ffde80;
+  opacity: .65;
 }
 .moon{
-  width: 95px;
-  height: 95px;
+  width: 60px;
+  height: 60px;
   position: absolute;
   top: 700px;
   left: 18%;
@@ -387,7 +396,7 @@ img {
 .cloud {
     position: absolute;
     left: 100%;
-    opacity: .8;
+    opacity: .4;
 }
 
 .cloud_1 {
@@ -396,7 +405,7 @@ img {
 }
 
 .cloud_2 {
-    width: 80px;
+    width: 70px;
     top: 40%;
 }
 
@@ -409,3 +418,28 @@ img {
     width: 70px;
     top: 30%;
 }
+.bird{
+    width: 40px;
+    position: absolute;
+    left: -100px;
+    margin: auto;
+    top: 15%;
+    z-index: 5;
+    opacity: 1;
+}
+.text{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:70px;
+    z-index: 10;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+}
+.text h1{
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 0;
+}
+
