@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="224b105b-8cf0-49fd-8935-04b4463c0a01" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/scooter.svg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/feedback.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/quiz.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/start.css" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/quiz.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/quiz.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Domany.design.iml" afterPath="$PROJECT_DIR$/.idea/Domany.design.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/general.css" afterPath="$PROJECT_DIR$/css/general.css" />
+>>>>>>> a42dc28e130895a5b591a79db5aedbf796d9d8c3
+>>>>>>> d57e119a728baa96a52ea32d7e8fde9de8eb9fb8
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +42,17 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="479">
               <caret line="370" column="52" lean-forward="false" selection-start-line="370" selection-start-column="52" selection-end-line="370" selection-end-column="52" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="150">
+              <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+=======
+            <state relative-caret-position="195">
+              <caret line="314" column="379" lean-forward="true" selection-start-line="314" selection-start-column="379" selection-end-line="314" selection-end-column="379" />
+>>>>>>> d57e119a728baa96a52ea32d7e8fde9de8eb9fb8
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -55,8 +83,14 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="2535">
               <caret line="169" column="25" lean-forward="false" selection-start-line="169" selection-start-column="25" selection-end-line="169" selection-end-column="27" />
+=======
+            <state relative-caret-position="1284">
+              <caret line="169" column="25" lean-forward="true" selection-start-line="169" selection-start-column="25" selection-end-line="169" selection-end-column="27" />
+>>>>>>> a42dc28e130895a5b591a79db5aedbf796d9d8c3
+>>>>>>> d57e119a728baa96a52ea32d7e8fde9de8eb9fb8
               <folding />
             </state>
           </provider>
@@ -289,14 +323,28 @@
       <option name="presentableId" value="Default" />
       <updated>1496002401857</updated>
       <workItem from="1496002404430" duration="2246000" />
+<<<<<<< HEAD
+=======
       <workItem from="1506203124646" duration="3570000" />
+<<<<<<< HEAD
       <workItem from="1506272366343" duration="183000" />
       <workItem from="1508597826718" duration="381000" />
+=======
+>>>>>>> a42dc28e130895a5b591a79db5aedbf796d9d8c3
+>>>>>>> d57e119a728baa96a52ea32d7e8fde9de8eb9fb8
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="6380000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="2246000" />
+=======
+    <option name="totallyTimeSpent" value="5816000" />
+>>>>>>> a42dc28e130895a5b591a79db5aedbf796d9d8c3
+>>>>>>> d57e119a728baa96a52ea32d7e8fde9de8eb9fb8
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -489,8 +537,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="479">
           <caret line="370" column="52" lean-forward="false" selection-start-line="370" selection-start-column="52" selection-end-line="370" selection-end-column="52" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="150">
+          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding />
+=======
+        <state relative-caret-position="195">
+          <caret line="314" column="379" lean-forward="true" selection-start-line="314" selection-start-column="379" selection-end-line="314" selection-end-column="379" />
+>>>>>>> d57e119a728baa96a52ea32d7e8fde9de8eb9fb8
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -514,6 +572,7 @@
             <element signature="n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+>>>>>>> a42dc28e130895a5b591a79db5aedbf796d9d8c3
         </state>
       </provider>
     </entry>

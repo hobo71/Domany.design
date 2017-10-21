@@ -65,8 +65,8 @@
             .to(clouds, globalDuration, { opacity:'0',ease: Power4.easeOut },0)
             .to(starsContainer, globalDuration, { opacity:'1',ease: Power4.easeOut },0)
             .to(spotLight, .1, { opacity:'1',ease: Power4.easeOut },0)
-            .to(moon, 1.2, { top:'150px',ease: Back.easeInOut.config(1.5)},0)
-            .to(sun, 1.2, { top:'700px',ease: Back.easeInOut.config(1.5)},0);
+            .to(moon, 1.5, { top:'150px',ease: Back.easeInOut.config(1.5)},0)
+            .to(sun, 1.5, { top:'700px',ease: Back.easeInOut.config(1.5)},0);
 
           return tl;
         }
@@ -168,7 +168,7 @@
         function scooterAnimation() {
             var tl = new TimelineMax();
             tl.to(wheel, .7, { rotation: "+=360", transformOrigin: "50% 50%", ease: Linear.easeNone, repeat: -1 }, 0)
-                .to([scooterBody,spotLight], .4, { y: "+=6", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0)
+                .to([scooterBody,spotLight], .35, { y: "+=6", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0)
                 .to(scooter, 4, { x: "+=100", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0);
             return tl;
         }
