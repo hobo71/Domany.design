@@ -163,10 +163,8 @@
         // sky line animation
         function skyLineAnimation() {
             var tl = new TimelineMax();
-            tl.to(skyLine1, 4, { left: "-100%", ease: Linear.easeNone, repeat: -1 }, 0)
-                .to(skyLine2, 10, { left: "-100%", ease: Linear.easeNone, repeat: -1 }, 0)
-                .to(skyLine3, 18, { left: "-100%", ease: Linear.easeNone, repeat: -1 }, 0)
-                .to(skyLine4, 35, { left: "-100%", ease: Linear.easeNone, repeat: -1 }, 0);
+            tl.to(skyLine1, 15, { left: "-100%", ease: Linear.easeNone, repeat: -1 }, 0)
+                .to(skyLine2, 25, { left: "-100%", ease: Linear.easeNone, repeat: -1 }, 0)
             return tl;
         }
 
@@ -174,8 +172,8 @@
         // scooter animation
         function scooterAnimation() {
             var tl = new TimelineMax();
-            tl.to(wheel, 1, { rotation: "+=360", transformOrigin: "50% 50%", ease: Linear.easeNone, repeat: -1 }, 0)
-                .to([scooterBody,spotLight], .35, { y: "+=6", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0)
+            tl.to(wheel, .75, { rotation: "+=360", transformOrigin: "50% 50%", ease: Linear.easeNone, repeat: -1 }, 0)
+                .to([scooterBody,spotLight], .35, { y: "+=7", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0)
                 .to(scooter, 4, { x: "+=70", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0)
             return tl;
         }
@@ -184,7 +182,7 @@
         // glasses reflection animation
             function glassReflectionAnimation() {
                 var tl = new TimelineMax();
-                tl.fromTo(reflection, 1.5,{x:-100}, { x:100, ease: Power1.easeInOut, repeat: -1,repeatDelay:2})
+                tl.fromTo(reflection, 1.5,{x:-100}, { x:100, ease: Power1.easeInOut, repeat: -1,repeatDelay:1.5})
                 ;
                 return tl;
             }

@@ -243,6 +243,7 @@ main page style
     position: relative;
     height: 100vh;
     overflow: hidden;
+    /*width: 49%;*/
 }
 
 svg,
@@ -251,12 +252,12 @@ img {
 }
 
 .road {
-    background-color: #724D34;
     position: absolute;
     bottom: 0;
     height: 150px;
     width: 100%;
     z-index: 50;
+    background-color: #041a3c;
 }
 
 #road_path {
@@ -267,34 +268,15 @@ img {
 }
 
 .sky_line_1,
-.sky_line_2,
-.sky_line_3,
-.sky_line_4 {
+.sky_line_2 {
     position: absolute;
     width: 200%;
     z-index: 40;
     left: 0;
-    bottom: 195px;
-}
-.sky_line_1{
-  height: 70px;
-}
-.sky_line_1 svg {
-  position: relative;
-  top: 0;
-}
-.sky_line_2 {
     bottom: 170px;
 }
-
-.sky_line_3 {
-    bottom: 210px;
-    box-shadow: 0 50px 0 50px #9E4000, 0 -10px 0 0 #9E4000 inset;
-}
-
-.sky_line_4 {
-    bottom: 250px;
-    box-shadow: 0 50px 0 50px #D35500, 0 -10px 0 0 #D35500 inset;
+.sky_line_2 {
+    bottom: 175px;
 }
 
 .scooter {
@@ -423,7 +405,7 @@ img {
     position: absolute;
     left: -100px;
     margin: auto;
-    top: 15%;
+    top: 20%;
     z-index: 5;
     opacity: 1;
 }
