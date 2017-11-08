@@ -6,6 +6,7 @@ html {
     line-height: 1.4;
     direction: ltr;
     overflow-x: hidden;
+    font-family: montserrat;
 }
 
 body {
@@ -118,13 +119,13 @@ a:visited {
 a,
 input[type=submit],
 input[type=button] {
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
+    -webkit-transition: all .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .slow {
-    -webkit-transition: all 1s ease!important;
-    transition: all 1s ease!important;
+    -webkit-transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955)!important;
+    transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955)!important;
 }
 
 .delay {
@@ -254,10 +255,10 @@ img {
 .road {
     position: absolute;
     bottom: 0;
-    height: 150px;
+    height: 170px;
     width: 100%;
     z-index: 50;
-    background-color: #041a3c;
+    background-color: #1D8ACC;
 }
 
 #road_path {
@@ -282,18 +283,18 @@ img {
 .scooter {
     position: absolute;
     bottom: 50px;
-    left: 0;
-    right: 0;
+    left: -300px;
+    /*right: 0;*/
     margin: auto;
     width: 280px;
     height: 315px;
     z-index: 60;
 }
-.scooter svg{
-    position: relative;
-    z-index: 1;
-    left: -25px;
-}
+/*.scooter svg{*/
+    /*position: relative;*/
+    /*z-index: 1;*/
+    /*left: -25px;*/
+/*}*/
 .spotLight{
     position: absolute;
     width: 700px;
@@ -308,8 +309,8 @@ img {
     position: absolute;
     bottom: 4px;
     overflow: hidden;
-    opacity: .4;
-    right: 250px;
+    opacity: .5;
+    right: 230px;
 }
 
 .smoke_unit_div {
@@ -337,7 +338,7 @@ img {
   height: 60px;
   border-radius: 100px;
   position: absolute;
-  top: 150px;
+  top: 25%;
   right: 18%;
   z-index: 2;
 }
@@ -358,14 +359,14 @@ img {
   right: 0;
   bottom: 0;
   z-index: 0;
-  background-color: #ffde80;
+  background-color: #ffec92;
   opacity: .65;
 }
 .moon{
   width: 60px;
   height: 60px;
   position: absolute;
-  top: 700px;
+  top: 100%;
   left: 18%;
   z-index: 2;
 }
@@ -401,11 +402,11 @@ img {
     top: 30%;
 }
 .bird{
-    width: 40px;
+    width: 42px;
     position: absolute;
     left: -100px;
     margin: auto;
-    top: 20%;
+    top: 27%;
     z-index: 5;
     opacity: 1;
 }
@@ -413,8 +414,8 @@ img {
     position: absolute;
     left: 0;
     right: 0;
-    top:70px;
-    z-index: 10;
+    top:12%;
+    z-index: 99;
     margin: auto;
     text-align: center;
     color: #fff;
@@ -424,4 +425,20 @@ img {
     font-size: 3rem;
     margin: 0;
 }
+/*.btn{*/
+    /*border: solid 2px #fff;*/
+    /*border-radius: 100px;*/
+    /*padding: 15px 0 14px 0;*/
+    /*margin: 15px 0;*/
+    /*letter-spacing: inherit;*/
+    /*width: 250px;*/
+    /*text-transform: uppercase;*/
+    /*font-size: .8rem;*/
+    /*background-color: rgba(255,255,255,.15);*/
+/*}*/
+/*.btn:hover{*/
+    /*letter-spacing: 1px;*/
+    /*background-color: #fff;*/
+    /*color: #1D8ACC;*/
+/*}*/
 

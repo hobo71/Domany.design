@@ -7,21 +7,12 @@
             sky = $('.main-Scene'),
             road = $('.road'),
             staggerIn = $('.stagger_in'),
-            roadPath = $('#road_path path'),
+            roadPath = $('.road_path'),
             skyLine1 = $('.sky_line_1'),
             skyLine2 = $('.sky_line_2'),
-            skyLine3 = $('.sky_line_3'),
-            skyLine4 = $('.sky_line_4'),
-            skyLine1Path = $('.sky_line_1 path'),
-            skyLine2Path = $('.sky_line_2 path'),
-            skyLine3Trees = $('.sky_line_3 .trees'),
-            skyLine3One = $('.sky_line_3 .one'),
-            skyLine3Two = $('.sky_line_3 .two'),
-            skyLine3Three = $('.sky_line_3 .three'),
-            skyLine4One = $('.sky_line_4 .one'),
-            skyLine4Two = $('.sky_line_4 .two'),
-            skyLine4Three = $('.sky_line_4 .three'),
-            skyLine4Four = $('.sky_line_4 .four'),
+            skyLine1buildings = $('.fr-skln'),
+            skyLine1Windows = $('.windows'),
+            skyLine2Path = $('.bc-skln'),
             scooter = $('.scooter'),
             scooterBody = $('.scooter-body'),
             spotLight = $('.spotLight'),
@@ -39,6 +30,9 @@
             wheel = $('.wheel'),
             bird = $('#bird'),
             $window_width = window.innerWidth,
+            button = $('.btn'),
+            buttonUp = $('#btn1'),
+            buttonDown = $('#btn2'),
             birdBody = $('.bird');
 
 
@@ -52,22 +46,14 @@
         function dayTime(){
           var globalDuration = 1.5;
           var tl = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:10}); //my reapeated timeline
-          tl.to(sky, globalDuration, { backgroundColor: "#2e3192",ease: Power4.easeOut },0)
-            .to(road, globalDuration, { backgroundColor: "#2e2749",ease: Power4.easeOut },0)
-            .to(roadPath, globalDuration, { autoAlpha: .4,ease: Power4.easeOut },0)
-            .to(skyLine1Path, globalDuration, { fill:'#212442',ease: Power4.easeOut },0)
-            .to(skyLine2Path, globalDuration, { fill:'#211a3d',ease: Power4.easeOut },0)
-            .to(skyLine3Trees, globalDuration, { fill:'#211a3d',ease: Power4.easeOut },0)
-            .to(skyLine3One, globalDuration, { fill:'#211a4b',ease: Power4.easeOut },0)
-            .to(skyLine3Two, globalDuration, { fill:'#211b5c',ease: Power4.easeOut },0)
-            .to(skyLine3Three, globalDuration, { fill:'#211a4b',ease: Power4.easeOut },0)
-            .to(skyLine4One, globalDuration, { fill:'#2c266f',ease: Power4.easeOut },0)
-            .to(skyLine4Two, globalDuration, { fill:'#2e286a',ease: Power4.easeOut },0)
-            .to(skyLine4Three, globalDuration, { fill:'#211b61',ease: Power4.easeOut },0)
-            .to(skyLine4Four, globalDuration, { fill:'#211b61',ease: Power4.easeOut },0)
+          tl.to(sky, globalDuration, { backgroundColor: "#2E3192",ease: Power4.easeOut },0)
+            .to(road, globalDuration, { backgroundColor: "#121849",ease: Power4.easeOut },0)
+            .to(skyLine1buildings, globalDuration, { fill:'#222A72',ease: Power4.easeOut },0)
+            .to(skyLine1Windows, globalDuration, { fill:'#FCEE21',ease: Power4.easeOut },0)
+            .to(skyLine2Path, globalDuration, { fill:'#131B4C',ease: Power4.easeOut },0)
             .to(clouds, globalDuration, { autoAlpha:'0',ease: Power4.easeOut },0)
             .to(starsContainer, globalDuration, { opacity:'1',ease: Power4.easeOut },0)
-            .to(spotLight, .1, { autoAlpha:'1',ease: Power4.easeOut },0)
+            // .to(spotLight, .1, { autoAlpha:'1',ease: Power4.easeOut },0)
             .to(birdBody, globalDuration, { autoAlpha:0,ease: Power4.easeOut },0)
             .to(moon, 1.5, { top:'150px',ease: Back.easeInOut.config(1)},0)
             .to(sun, 1.5, { top:'700px',ease: Back.easeInOut.config(1)},0);
@@ -102,7 +88,7 @@
             for (var n = 0; n < stars.length; n++) {
                 TweenMax.set(stars[n], {
                     fill: starColorsArray[n % starColorsArray.length],
-                    alpha: randomBetween(4, 10) / 10,
+                    alpha: randomBetween(5, 7) / 10,
                     attr: {
                         r: randomBetween(1, 7) / 10,
                         cx: randomBetween(1, 1500),
@@ -110,12 +96,12 @@
                     }
                 });
 
-                TweenMax.to(stars[n], randomBetween(.5,1.5),{
+                TweenMax.to(stars[n], randomBetween(.5,1),{
                     alpha: randomBetween(0, 10) / 10,
                     attr: {
                         r:'+=1'
                     },
-                    delay:randomBetween(.1,1),
+                    delay:randomBetween(.1,.75),
                     repeat:-1,
                     yoyo:true
                 });
@@ -127,11 +113,11 @@
 
         //scene slide in animation
         function sceneInAnimation() {
-            var tl = new TimelineMax(); //my reapeated timeline
-            tl.staggerFrom(staggerIn, 1, { bottom: '-70%', scaleY: "0", ease: Back.easeOut.config(1.9) }, -.05)
-                .from(road, 1, { bottom: '-30%', height: "0", ease: Power4.easeOut}, 0)
-                .from(scooter, 5, { left: '-150%', ease: Power2.easeOut }, 1)
-                .from(sun,1.5, { scale: 0,ease: Elastic.easeOut.config(1, 0.5),delay:1}, 0);
+            var tl = new TimelineMax({delay:.5}); //my reapeated timeline
+            tl.staggerFrom(staggerIn, .7, { bottom: "-10%", scaleY: "0", ease: Back.easeOut.config(1.5) }, -.05)
+                .from(road, .7, { bottom: '-30%', height: "0", ease: Power3.easeOut}, 0)
+                .to(scooter, 6, { left: 0,right:0, ease: Power2.easeOut }, 1)
+                .from(sun,1.5, { scale: 0,ease: Elastic.easeOut.config(1, 0.5),delay:.8}, 0);
             return tl;
         }
 
@@ -163,8 +149,8 @@
         // sky line animation
         function skyLineAnimation() {
             var tl = new TimelineMax();
-            tl.to(skyLine1, 15, { left: "-100%", ease: Linear.easeNone, repeat: -1 }, 0)
-                .to(skyLine2, 25, { left: "-100%", ease: Linear.easeNone, repeat: -1 }, 0)
+            tl.to(skyLine1, 20, { left: "-100%", ease: Linear.easeNone, repeat: -1 }, 0)
+                .to(skyLine2, 30, { left: "-100%", ease: Linear.easeNone, repeat: -1 }, 0);
             return tl;
         }
 
@@ -174,7 +160,7 @@
             var tl = new TimelineMax();
             tl.to(wheel, .75, { rotation: "+=360", transformOrigin: "50% 50%", ease: Linear.easeNone, repeat: -1 }, 0)
                 .to([scooterBody,spotLight], .35, { y: "+=7", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0)
-                .to(scooter, 4, { x: "+=70", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0)
+                .to(scooter, 4, { x: "-=50", ease: Power1.easeInOut, repeat: -1, yoyo: true }, 0);
             return tl;
         }
 
@@ -207,11 +193,12 @@
 
         // Bird animation
         function BirdAnimation() {
-            var tl = new TimelineMax({repeat:-1});
-            tl.to(bird, .4, {morphSVG:"#bird2", ease: Linear.easeNone})
-              .to(bird, .3, {morphSVG:"#bird3", ease: Linear.easeNone})
+            var tl = new TimelineMax({repeat:-1, repeatDelay:1.1});
+            tl.to(bird, .2, {morphSVG:"#bird2", ease: Linear.easeNone})
+              .to(bird, .2, {morphSVG:"#bird3", ease: Linear.easeNone})
               .to(bird, .2, {morphSVG:"#bird4", ease: Linear.easeNone})
-              .to(bird, .1, {morphSVG:"#bird6", ease: Linear.easeNone})
+              .to(bird, .2, {morphSVG:"#bird5", ease: Linear.easeNone})
+              .to(bird, .3, {morphSVG:"#bird6", ease: Linear.easeNone})
             ;
             return tl;
         }
@@ -219,7 +206,7 @@
         // Bird movement animation
         function BirdMovementAnimation() {
             var tl = new TimelineMax({repeat: -1});
-            tl.to(birdBody, .5, { y: "+=8", ease: Power1.easeInOut,yoyo: true, repeat: -1,delay:.34 }, 0)
+            tl.to(birdBody, 1.1, { y: "+=10", ease: Power1.easeIn,yoyo: true, repeat: -1, delay:1.5}, 0)
               .to(birdBody,50,{x:$window_width+100, ease: Linear.easeNone, repeat: -1},0)
             ;
             return tl;
@@ -233,6 +220,42 @@
             ;
             return tl;
         }
+
+
+        // button mouse Down elastic animation
+        function ButtonDownAnimation(){
+            var tl = new TimelineMax();
+
+            tl.to(buttonUp,.25, {morphSVG:buttonDown,ease: Circ.easeOut})
+            ;
+
+            return tl ;
+        }
+
+
+        // button mouse Up elastic animation
+        function ButtonUpAnimation(){
+            var tl = new TimelineMax();
+
+            tl.to(buttonUp,1, {morphSVG:buttonUp,ease: Elastic.easeOut.config(1.5, 0.2)})
+            ;
+
+            return tl ;
+        }
+
+        // button click to wiggle
+        button.mousedown(function(){
+            ButtonDownAnimation();
+        });
+        button.mouseup(function(){
+            ButtonUpAnimation();
+        });
+
+
+
+        $('#nav-icon3').click(function(){
+            $(this).toggleClass('open');
+        });
 
 
 

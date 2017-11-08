@@ -1,0 +1,135 @@
+.btn{
+    color: #fff;
+    position: relative;
+    margin:0 auto;
+    border: none;
+    outline: none;
+    display: table;
+    background-color: transparent;
+    width: 250px;
+}
+.btn span{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+    z-index: 10;
+    height: 20px;
+    font-size: .9rem;
+    letter-spacing: inherit;
+}
+#btn1{
+     fill:transparent;
+    -webkit-transition: fill .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: fill .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.btn:hover span{
+    letter-spacing: 1px;
+    color: #1D8ACC;
+}
+.btn:hover #btn1{
+    fill:#fff;
+}
+
+
+/* hamburger Icon */
+.hamburger{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 201;
+}
+#nav-icon3 {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin: 0 auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    cursor: pointer;
+    display: block;
+}
+
+#nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #fff;
+    border-radius: 50px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+#nav-icon3 span:nth-child(1) {
+    top: 0;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+    top: 10px;
+}
+
+#nav-icon3 span:nth-child(4) {
+    top: 20px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+    top: 10px;
+    width: 0;
+    left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+    top: 10px;
+    width: 0;
+    left: 50%;
+}
+
+/*nav*/
+nav{
+    position: fixed;
+    width: 75%;
+    height: 100vh;
+    z-index: 200;
+    right:0;
+    top: 0;
+    background-color: #fff;
+}
+.menu{
+    text-align: right;
+    margin: 70px 10% 0 0;
+    padding: 0;
+}
+.menu a{
+    color: #1D8ACC;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0;
+}
+.menu a:hover{
+    letter-spacing: 2px;
+    color: #46d6f7;
+}
