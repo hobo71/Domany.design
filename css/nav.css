@@ -6,7 +6,7 @@
     outline: none;
     display: table;
     background-color: transparent;
-    width: 250px;
+    width: 270px;
 }
 .btn span{
     position: absolute;
@@ -18,28 +18,29 @@
     margin: auto;
     z-index: 10;
     height: 20px;
-    font-size: .9rem;
+    font-size: .90rem;
     letter-spacing: inherit;
+    text-transform: uppercase;
 }
 #btn1{
-     fill:transparent;
+     fill:rgba(255,255,255,.2);
     -webkit-transition: fill .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     transition: fill .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .btn:hover span{
     letter-spacing: 1px;
-    color: #1D8ACC;
+    color: #1e9acc;
 }
 .btn:hover #btn1{
-    fill:#fff;
+    fill:rgba(255,255,255,.8);
 }
 
 
 /* hamburger Icon */
 .hamburger{
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
     z-index: 201;
 }
 #nav-icon3 {
@@ -111,10 +112,10 @@
 /*nav*/
 nav{
     position: fixed;
-    width: 75%;
+    width: 70%;
     height: 100vh;
     z-index: 200;
-    right:0;
+    right:-100%;
     top: 0;
     background-color: #fff;
 }
@@ -124,12 +125,22 @@ nav{
     padding: 0;
 }
 .menu a{
-    color: #1D8ACC;
-    font-size: 2.5rem;
+    color: #1e9acc;
+    font-size: 3rem;
     font-weight: bold;
     letter-spacing: 0;
+    padding: 5px;
 }
 .menu a:hover{
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: #46d6f7;
+}
+#navEdg_container{
+    position: absolute;
+    left: -200px;
+    top:0;
+    bottom: 0;
+    z-index: 0;
+    height: 100%;
+    width: 222px;
 }

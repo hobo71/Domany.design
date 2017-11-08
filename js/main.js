@@ -33,6 +33,11 @@
             button = $('.btn'),
             buttonUp = $('#btn1'),
             buttonDown = $('#btn2'),
+            menuButton = $('.hamburger'),
+            nav = $('nav'),
+            navEdg = $('#navEdg'),
+            navEdgIn = $('#navEdg1'),
+            navEdgOut = $('#navEdg2'),
             birdBody = $('.bird');
 
 
@@ -207,7 +212,7 @@
         function BirdMovementAnimation() {
             var tl = new TimelineMax({repeat: -1});
             tl.to(birdBody, 1.1, { y: "+=10", ease: Power1.easeIn,yoyo: true, repeat: -1, delay:1.5}, 0)
-              .to(birdBody,50,{x:$window_width+100, ease: Linear.easeNone, repeat: -1},0)
+              .to(birdBody,65,{x:$window_width+100, ease: Linear.easeNone, repeat: -1},0)
             ;
             return tl;
         }
@@ -232,7 +237,6 @@
             return tl ;
         }
 
-
         // button mouse Up elastic animation
         function ButtonUpAnimation(){
             var tl = new TimelineMax();
@@ -252,9 +256,47 @@
         });
 
 
+        // line in elastic animation
+        function navInAnimation(){
+            var tl = new TimelineMax();
 
-        $('#nav-icon3').click(function(){
-            $(this).toggleClass('open');
+            tl.to(nav,1, {right:0},0)
+              .to(navEdg,.5, {morphSVG:navEdgIn},0)
+              .to(navEdg, 1, {morphSVG:navEdg,ease: Elastic.easeOut.config(1, 0.3)})
+            ;
+
+            return tl ;
+        }
+
+
+        // line in elastic animation
+        function navOutAnimation(){
+            var tl = new TimelineMax();
+
+            tl.to(nav,1, {right:'-100%'},0)
+              .to(navEdg,.5, {morphSVG:navEdgOut},0)
+              .to(navEdg, 1, {morphSVG:navEdg,ease: Elastic.easeOut.config(1, 0.3)})
+            ;
+
+            return tl ;
+        }
+
+
+
+        // micro toggleClick jquery plugin
+        jQuery.fn.clickToggle = function(a,b) {
+            var ab = [b,a];
+            return this.on("click", function(){ ab[this._tog^=1].call(this); });
+        };
+
+        // click more button to toggle drawer
+        menuButton.clickToggle(function() {
+            navInAnimation();
+            $(this).addClass('Open');
+
+        }, function() {
+            navOutAnimation();
+            $(this).removeClass('Open');
         });
 
 
