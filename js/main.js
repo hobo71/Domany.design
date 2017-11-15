@@ -33,7 +33,8 @@
             button = $('.btn'),
             buttonUp = $('#btn1'),
             buttonDown = $('#btn2'),
-            menuButton = $('.hamburger'),
+            menuButton = $('.hamburger a'),
+            menuLinks = $('.menu li'),
             nav = $('nav'),
             navEdg = $('#navEdg'),
             navEdgIn = $('#navEdg1'),
@@ -260,9 +261,10 @@
         function navInAnimation(){
             var tl = new TimelineMax();
 
-            tl.to(nav,1, {right:0},0)
+            tl.to(nav,1.25, {right:0,ease: Power4.easeOut})
               .to(navEdg,.5, {morphSVG:navEdgIn},0)
-              .to(navEdg, 1, {morphSVG:navEdg,ease: Elastic.easeOut.config(1, 0.3)})
+              .to(navEdg, 1.7, {morphSVG:navEdg,ease: Elastic.easeOut.config(1, 0.3)},'-=.65')
+              .staggerFrom(menuLinks, 1.2, {x:"+=100",ease: Power4.easeOut},.1,.25)
             ;
 
             return tl ;
@@ -273,8 +275,8 @@
         function navOutAnimation(){
             var tl = new TimelineMax();
 
-            tl.to(nav,1, {right:'-100%'},0)
-              .to(navEdg,.5, {morphSVG:navEdgOut},0)
+            tl.to(nav,1, {right:'-100%',ease: Power4.easeInOut})
+              .to(navEdg,.5, {morphSVG:navEdgOut},.1)
               .to(navEdg, 1, {morphSVG:navEdg,ease: Elastic.easeOut.config(1, 0.3)})
             ;
 
@@ -292,11 +294,13 @@
         // click more button to toggle drawer
         menuButton.clickToggle(function() {
             navInAnimation();
-            $(this).addClass('Open');
+            $(this).addClass('open');
+            $('.overlay').removeClass('fade');
 
         }, function() {
             navOutAnimation();
-            $(this).removeClass('Open');
+            $(this).removeClass('open');
+            $('.overlay').addClass('fade');
         });
 
 
