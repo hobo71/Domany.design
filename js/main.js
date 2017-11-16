@@ -292,12 +292,14 @@
         };
 
         // click more button to toggle drawer
-        menuButton.clickToggle(function() {
+        menuButton.clickToggle(function(e) {
+            e.preventDefault();
             navInAnimation();
             $(this).addClass('open');
             $('.overlay').removeClass('fade');
 
-        }, function() {
+        }, function(e) {
+            e.preventDefault();
             navOutAnimation();
             $(this).removeClass('open');
             $('.overlay').addClass('fade');
