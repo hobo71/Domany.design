@@ -45,13 +45,14 @@
         // the master time-line setup
         master
             .add(sceneInAnimation())
-            .add(RepeatedAnimations(), 0);
+            .add(RepeatedAnimations(), 0)
+            .add(dayNight(), 0);
 
 
         // change the scene to night
-        function dayTime(){
+        function dayNight(){
           var globalDuration = 1.5;
-          var tl = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:10}); //my reapeated timeline
+          var tl = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:10, delay:10}); //my reapeated timeline
           tl.to(sky, globalDuration, { backgroundColor: "#2E3192",ease: Power4.easeOut },0)
             .to(road, globalDuration, { backgroundColor: "#121849",ease: Power4.easeOut },0)
             .to(skyLine1buildings, globalDuration, { fill:'#222A72',ease: Power4.easeOut },0)
@@ -66,9 +67,6 @@
 
           return tl;
         }
-        setTimeout(function(){
-          dayTime();
-        },15000);
 
 
 
@@ -259,6 +257,7 @@
 
         // line in elastic animation
         function navInAnimation(){
+            master.pause();
             var tl = new TimelineMax();
 
             tl.to(nav,1.25, {right:0,ease: Power4.easeOut})
@@ -279,7 +278,7 @@
               .to(navEdg,.5, {morphSVG:navEdgOut},.1)
               .to(navEdg, 1, {morphSVG:navEdg,ease: Elastic.easeOut.config(1, 0.3)})
             ;
-
+            master.play();
             return tl ;
         }
 
@@ -294,6 +293,7 @@
         // click more button to toggle drawer
         menuButton.clickToggle(function(e) {
             // e.preventDefault();
+            // master.pause();
             navInAnimation();
             $(this).addClass('open');
             $('.overlay').removeClass('fade');
@@ -303,6 +303,7 @@
             navOutAnimation();
             $(this).removeClass('open');
             $('.overlay').addClass('fade');
+            // master.play();
         });
 
 
