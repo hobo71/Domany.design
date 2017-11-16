@@ -293,13 +293,13 @@
 
         // click more button to toggle drawer
         menuButton.clickToggle(function(e) {
-            e.preventDefault();
+            // e.preventDefault();
             navInAnimation();
             $(this).addClass('open');
             $('.overlay').removeClass('fade');
 
         }, function(e) {
-            e.preventDefault();
+            // e.preventDefault();
             navOutAnimation();
             $(this).removeClass('open');
             $('.overlay').addClass('fade');
