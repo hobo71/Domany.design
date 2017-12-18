@@ -39,6 +39,8 @@
             navEdg = $('#navEdg'),
             navEdgIn = $('#navEdg1'),
             navEdgOut = $('#navEdg2'),
+            stagger1 = $('.stg1'),
+            overlay = $('.overlay'),
             birdBody = $('.bird');
 
 
@@ -46,7 +48,8 @@
         master
             .add(sceneInAnimation())
             .add(RepeatedAnimations(), 0)
-            .add(dayNight(), 0);
+            .add(dayNight(), 0)
+            .add(textInAnim(),0);
 
 
         // change the scene to night
@@ -68,6 +71,14 @@
           return tl;
         }
 
+    // text in animation
+    function textInAnim(){
+        var tl = new TimelineMax();
+          tl.set(stagger1,{position:'relative', autoAlpha:1})
+            .staggerFrom(stagger1,1.2, { y: "+=70",autoAlpha:0,ease: Power3.easeInOut,delay:2.7},.1)
+        ;
+        return tl;
+    }
 
 
         //create & animate stars randomly
@@ -100,12 +111,12 @@
                     }
                 });
 
-                TweenMax.to(stars[n], randomBetween(.5,1),{
+                TweenMax.to(stars[n], randomBetween(.7,1.3),{
                     alpha: randomBetween(0, 10) / 10,
                     attr: {
-                        r:'+=1'
+                        r:'+=1.1'
                     },
-                    delay:randomBetween(.1,.75),
+                    delay:randomBetween(.1,.9),
                     repeat:-1,
                     yoyo:true
                 });
@@ -120,7 +131,7 @@
             var tl = new TimelineMax({delay:.5}); //my reapeated timeline
             tl.staggerFrom(staggerIn, .7, { bottom: "-10%", scaleY: "0", ease: Back.easeOut.config(1.5) }, -.05)
                 .from(road, .7, { bottom: '-30%', height: "0", ease: Power3.easeOut}, 0)
-                .to(scooter, 6, { left: 0,right:0, ease: Power2.easeOut }, 1)
+                .to(scooter, 5, { left: 0,right:0, ease: Power2.easeOut }, 1)
                 .from(sun,1.5, { scale: 0,ease: Elastic.easeOut.config(1, 0.5),delay:.8}, 0);
             return tl;
         }
@@ -146,7 +157,7 @@
         // roade Animation
         function roadAnimation() {
             var tl = new TimelineMax();
-            tl.to(roadPath, .5, { strokeDashoffset: 200, ease: Linear.easeNone, repeat: -1 }, 0);
+            tl.to(roadPath, .7, { strokeDashoffset: 200, ease: Linear.easeNone, repeat: -1 }, 0);
             return tl;
         }
 
@@ -172,7 +183,7 @@
         // glasses reflection animation
             function glassReflectionAnimation() {
                 var tl = new TimelineMax();
-                tl.fromTo(reflection, 1.5,{x:-100}, { x:100, ease: Power1.easeInOut, repeat: -1,repeatDelay:1.5})
+                tl.fromTo(reflection, 1.5,{x:100}, { x:-100, ease: Power1.easeInOut, repeat: -1,repeatDelay:1.5})
                 ;
                 return tl;
             }
@@ -257,13 +268,12 @@
 
         // line in elastic animation
         function navInAnimation(){
-            master.pause();
             var tl = new TimelineMax();
 
-            tl.to(nav,1.25, {right:0,ease: Power4.easeOut})
+            tl.to(nav,1, {right:0,ease: Power4.easeOut})
               .to(navEdg,.5, {morphSVG:navEdgIn},0)
-              .to(navEdg, 1.7, {morphSVG:navEdg,ease: Elastic.easeOut.config(1, 0.3)},'-=.65')
-              .staggerFrom(menuLinks, 1.2, {x:"+=100",ease: Power4.easeOut},.1,.25)
+              .to(navEdg, 1.7, {morphSVG:navEdg,ease: Elastic.easeOut.config(1, 0.3)},'-=.5')
+              .staggerFrom(menuLinks, 1, {x:"+=100",ease: Power4.easeOut},.11,.1)
             ;
 
             return tl ;
@@ -274,11 +284,10 @@
         function navOutAnimation(){
             var tl = new TimelineMax();
 
-            tl.to(nav,1, {right:'-100%',ease: Power4.easeInOut})
-              .to(navEdg,.5, {morphSVG:navEdgOut},.1)
-              .to(navEdg, 1, {morphSVG:navEdg,ease: Elastic.easeOut.config(1, 0.3)})
+            tl.to(nav,1.25, {right:'-100%',ease: Power4.easeInOut})
+              .to(navEdg,.5, {morphSVG:navEdgOut},.2)
+              .to(navEdg, .01, {morphSVG:navEdg})
             ;
-            master.play();
             return tl ;
         }
 
@@ -287,24 +296,28 @@
         // micro toggleClick jquery plugin
         jQuery.fn.clickToggle = function(a,b) {
             var ab = [b,a];
-            return this.on("click", function(){ ab[this._tog^=1].call(this); });
+            return this.on("click", function(e){
+                e.preventDefault();
+                ab[this._tog^=1].call(this);
+            });
         };
 
         // click more button to toggle drawer
-        menuButton.clickToggle(function(e) {
-            // e.preventDefault();
-            // master.pause();
+        menuButton.clickToggle(function() {
+            master.pause();
             navInAnimation();
             $(this).addClass('open');
-            $('.overlay').removeClass('fade');
+            overlay.removeClass('fade');
 
-        }, function(e) {
-            // e.preventDefault();
+        }, function() {
             navOutAnimation();
             $(this).removeClass('open');
-            $('.overlay').addClass('fade');
-            // master.play();
+            setTimeout(function () {
+                overlay.addClass('fade');
+                master.play();
+            },700)
         });
+
 
 
 

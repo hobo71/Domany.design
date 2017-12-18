@@ -1,13 +1,45 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
-@import url('https://fonts.googleapis.com/css?family=Quicksand:500,700');
+/*@import url('https://fonts.googleapis.com/css?family=Quicksand:500,700');*/
+
+/*font*/
+@font-face {
+    font-family: "FaktProSoft";
+    src: url("../fonts/FaktSoftPro-Blond.eot");
+    src: url("../fonts/FaktSoftPro-Blond.eot?#iefix") format("embedded-opentype"), url("../fonts/FaktSoftPro-Blond.woff") format("woff"), url("../fonts/FaktSoftPro-Blond.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal; }
+
+@font-face {
+    font-family: "FaktProSoft";
+    src: url("../fonts/FaktSoftPro-Normal.eot");
+    src: url("../fonts/FaktSoftPro-Normal.eot?#iefix") format("embedded-opentype"), url("../fonts/FaktSoftPro-Normal.woff") format("woff"), url("../fonts/FaktSoftPro-Normal.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal; }
+
+@font-face {
+    font-family: "FaktProSoft";
+    src: url("../fonts/FaktSoftPro-Medium.eot");
+    src: url("../fonts/FaktSoftPro-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/FaktSoftPro-Medium.woff") format("woff"), url("../fonts/FaktSoftPro-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal; }
+
+
+/*general*/
 html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
     direction: ltr;
     overflow-x: hidden;
-    font-family: 'Quicksand', sans-serif;
+    /*font-family: 'Quicksand', sans-serif;*/
 }
+.fontFamily-faktSoft, html,
+body,
+input,
+button,
+select,
+textarea {
+    font-family: "FaktProSoft", "Helvetica Neue", helvetica, arial, sans-serif; }
 
 body {
     font: 17px/35px;
@@ -77,22 +109,22 @@ li {
 h1 {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 h2 {
     font-size: 2.1rem;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 h3 {
     font-size: 1.7rem;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 h4 {
     font-size: 1.2rem;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 h5 {
@@ -120,11 +152,13 @@ a,
 input[type=submit],
 input[type=button] {
     -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
     transition: all .3s ease;
 }
 
 .slow {
     -webkit-transition: all 1s ease!important;
+    -moz-transition: all 1s ease!important;
     transition: all 1s ease!important;
 }
 
@@ -250,7 +284,7 @@ main page style
 
 svg,
 img {
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .road {
@@ -443,7 +477,7 @@ img {
     outline: none;
     display: table;
     background-color: transparent;
-    width: 270px;
+    width: 275px;
 }
 .btn span{
     position: absolute;
@@ -451,7 +485,7 @@ img {
     right: 0;
     top: 0;
     bottom: 0;
-    display: block;
+    display: inline-block;
     margin: auto;
     z-index: 10;
     height: 24px;
@@ -476,14 +510,13 @@ img {
 header{
     height: 65px;
     background-color: #fff;
-    box-shadow: 0 0 15px rgba(0,0,0,.07);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
 }
-header.transparent{
+header.transparent-nav{
     background-color: transparent;
     box-shadow: none;
 }
@@ -520,7 +553,7 @@ header.transparent{
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
 }
-.main-Scene .nav-icon3 span{
+.transparent-nav .nav-icon3 span {
     background: #fff;
 }
 
@@ -568,7 +601,7 @@ header.transparent{
 nav{
     position: fixed;
     width: calc(100% - 250px);
-    max-width: 600px;
+    max-width: 500px;
     height: 100vh;
     z-index: 200;
     right:-100%;
@@ -577,51 +610,48 @@ nav{
 }
 .menu{
     text-align: right;
-    margin: auto 20px;
-    padding: 0;
+    margin: auto 0;
+    padding: 0 20px;
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
+    left: -22px;
     width: 100%;
     height: 305px;
+    z-index: 1;
+}
+.menu li{
+    position: relative;
+    text-align: center;
 }
 .menu a{
     color: #1e9acc;
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 2.3rem;
+    font-weight: 500;
     letter-spacing: 0;
-    padding: 5px 15px;
-    display: block;
-    position: relative;
+    padding: 10px 15px 17px;
+    display: inline-block;
+    width: 220px;
     z-index: 99;
-}
-.menu a:after{
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    width: 0;
-    height: 100%;
-    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(249,249,249,1) 100%);
-    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(249,249,249,1) 100%);
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(249,249,249,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#f9f9f9',GradientType=1 );
-    -webkit-transition: width .3s ease;
-    transition: width .3s ease;
-    z-index: -1;
+    text-align: center;
 }
 .menu a:hover{
-    letter-spacing: 3px;
     color: #46d6f7;
+    letter-spacing: 3px;
 }
-.menu a:hover:after{
-    width: 100%;
+.menu .morph_shape{
+    width: 220px;
+    height: 25px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 #navEdg_container{
     position: absolute;
-    left: -200px;
+    left: -100px;
     top:0;
     bottom: 0;
     z-index: 0;
@@ -634,20 +664,25 @@ nav{
     background-color: rgba(10,50,70,.8);
     width: 100%;
     height: 100%;
+    top:0;
+    left: 0;
 }
 /*social icons*/
 .social{
     position: absolute;
-    bottom: 10px;
-    right: 30px;
+    bottom: 40px;
+    right: 0;
+    padding: 0;
+    left: -47px;
+    text-align: center;
+    z-index: 1;
 }
 .social li{
     display: inline-block;
 }
 .social li a{
     display: block;
-    width: 45px;
-    height: 45px;
+    width: 43px;
     padding: 10px;
 }
 .social li a svg{
@@ -661,21 +696,111 @@ nav{
 }
 .copyrights{
     color: #cccccc;
-    font-size: 12px;
+    font-size: 11px;
     position: absolute;
-    bottom: 30px;
-    left: -105px;
-    z-index: 9;
+    bottom: 25px;
+    z-index: 1;
+    left: -47px;
+    right: 0;
+    text-align: center;
 }
 .logo{
     padding: 20px;
-    color: #1e9acc;
     font-weight: bold;
 }
-.main-Scene .logo{
+
+
+/*==================================================
+inner page style
+================================================== */
+
+.inner .title-block{
+    padding: 150px 20px 120px 20px;
+    background-color: #46d6f7;
     color: #fff;
 }
+.title-block h1{
+    margin: 0;
+}
+.title-block p{
+    margin: 0;
+    font-size: 1.2em;
+}
+.all-projects{
+    padding-bottom: 200px;
+}
+.thumb{
+    background-color: rgba(70,214,247,.2);
+    width: 480px;
+    height: 300px;
+    cursor: pointer;
+}
+.thumb svg{
+    height: 0;
+    width: 0;
+}
+.thumb img{
+    width: 100%;
+}
+.proj-unit{
+    text-align: center;
+}
+.proj-container{
+    margin: 25vh 0 0;
+    position: relative;
+    display: inline-block;
+}
+a.proj-name{
+    white-space: nowrap;
+    position: absolute;
+    bottom: 90px;
+    left: calc(100% - 100px);
+    z-index: 1;
+    display: block;
+    font-size: 2.3em;
+    color:#1e9acc;
+    letter-spacing: 0;
+    -webkit-transition: letter-spacing .3s ease, color .3s ease;
+    -moz-transition: letter-spacing .3s ease, color .3s ease;
+    transition: letter-spacing .3s ease, color .3s ease;
+}
+.proj-name:hover
+/*, .proj-container:hover .proj-name*/
+{
+    color:#46d6f7;
+    letter-spacing: 1px;
+}
+.proj-unit:nth-of-type(2n) .proj-name{
+    left: auto;
+    right: calc(100% - 100px);
+}
+.proj-unit:nth-of-type(2n) .proj-container{
+    float: right;
+}
+.proj-description{
+    position: absolute;
+    bottom: 8px;
+    left: calc(100% + 40px);
+    z-index: 1;
+    display: block;
+    text-align: left;
+    width: 70%;
+}
 
-
-/*inner page*/
-.inner{}
+.proj-description span{
+    color: #cccccc;
+    font-size: .7em;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 100;
+}
+.proj-description p{
+    margin: 0;
+    font-size: .88em;
+    line-height: normal;
+}
+.proj-unit:nth-of-type(2n) .proj-description{
+    right: calc(100% + 40px);
+    left: auto;
+    text-align: right;
+}

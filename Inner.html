@@ -8,8 +8,8 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
 
   <link href="css/normalize.min.css" rel="stylesheet">
-  <link href="css/general.css" rel="stylesheet">
   <link href="css/pintsize.min.css" rel="stylesheet">
+  <link href="css/general.css" rel="stylesheet">
   <link href="css/inner.css" rel="stylesheet">
 
   <!--[if lt IE 9]>
@@ -20,8 +20,34 @@
 
 <body>
   <div class="wrapper">
+    <!--<svg class="hidden">-->
+      <!--<defs>-->
+        <!--<path class="r-out" d="M270 270H10V10h260c13.3 86.7 13.3 173.3 0 260z"/>-->
+        <!--<path class="r-in" d="M270 270H10V10h260c-14.5 86.7-14.5 173.3 0 260z"/>-->
+        <!--<path class="l-out" d="M270 270H10C-2.3 183.3-2.3 96.7 10 10h260v260z"/>-->
+        <!--<path class="l-in" d="M270 270H10c17.8-86.7 17.8-173.3 0-260h260v260z"/>-->
+        <!--<path class="t-out" d="M270 270H10V10C96.7-1.5 183.3-1.5 270 10v260z"/>-->
+        <!--<path class="t-in" d="M270 270H10V10c86.7 14.7 173.3 14.7 260 0v260z"/>-->
+        <!--<path class="b-out" d="M270 270c-86.7 11.7-173.3 11.7-260 0V10h260v260z"/>-->
+        <!--<path class="b-in" d="M270 270c-86.7-13.1-173.3-13.1-260 0V10h260v260z"/>-->
+      <!--</defs>-->
+
+    <!--</svg>-->
+    <svg class="hidden">
+      <defs>
+        <path class="r-out" d="M470 290H10V10h460c13.3 95.1 13.3 188.4 0 280z"/>
+        <path class="r-in" d="M470 290H10V10h460c-14.1 93.3-14.1 186.7 0 280z"/>
+        <path class="l-out" d="M470 290H10C-3.3 196.7-3.3 103.3 10 10h460v280z"/>
+        <path class="l-in" d="M470 290H10c14-93.3 14-186.7 0-280h460v280z"/>
+        <path class="t-out" d="M470 290H10V10C163.3-3.3 316.7-3.3 470 10v280z"/>
+        <path class="t-in" d="M470 290H10V10c153.3 13.5 306.7 13.5 460 0v280z"/>
+        <path class="b-out" d="M470 290c-153.3 13.3-306.7 13.3-460 0V10h460v280z"/>
+        <path class="b-in" d="M470 290c-153.3-14.4-306.7-14.4-460 0V10h460v280z"/>
+      </defs>
+
+    </svg>
     <div class="overlay transition slow fade"></div>
-    <header class="transparent">
+    <header class="transparent-nav">
       <div class="logo">Domany</div>
       <div class="hamburger">
         <a href="#" class="nav-icon3">
@@ -33,10 +59,39 @@
       </div>
       <nav>
         <ul class="menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About me</a></li>
-          <li><a href="#">My work</a></li>
-          <li><a href="#">Hire me</a></li>
+          <li>
+            <a href="#">Home</a>
+            <div class="morph_shape">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 40" preserveAspectRatio="none">
+                <path class="line" fill="none" stroke="#f7f7f7" stroke-width="4" d="M5 20h340" stroke-linecap="round"/>
+                <path class="line1" fill="none" d="M5 20C118.3 3.7 231.7 3.7 345 20"/>
+                <path class="line2" fill="none" d="M5 20c113.3 17.2 226.7 17.2 340 0"/>
+              </svg>
+            </div>
+          </li>
+          <li>
+            <a href="#">Profile</a>
+            <div class="morph_shape">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 40" preserveAspectRatio="none">
+                <path class="line" fill="none" stroke="#f7f7f7" stroke-width="4" d="M5 20h340" stroke-linecap="round"/>
+                <path class="line1" fill="none" d="M5 20C118.3 3.7 231.7 3.7 345 20"/>
+                <path class="line2" fill="none" d="M5 20c113.3 17.2 226.7 17.2 340 0"/>
+              </svg>
+            </div>
+          </li>
+          <li>
+            <a href="#">Projects</a>
+            <div class="morph_shape">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 40" preserveAspectRatio="none">
+                <path class="line" fill="none" stroke="#f7f7f7" stroke-width="4" d="M5 20h340" stroke-linecap="round"/>
+                <path class="line1" fill="none" d="M5 20C118.3 3.7 231.7 3.7 345 20"/>
+                <path class="line2" fill="none" d="M5 20c113.3 17.2 226.7 17.2 340 0"/>
+              </svg>
+            </div>
+          </li>
+          <li>
+            <a href="#">Hire me</a>
+          </li>
         </ul>
         <ul class="social">
           <li>
@@ -50,10 +105,10 @@
             <a href="#">
               <svg xmlns="http://www.w3.org/2000/svg" class="linkedin transition" viewBox="0 0 64 62.888">
                 <path d="M6.902,0c-4.229,0-6.988,2.85-6.9,6.646c-0.088,3.619,2.677,6.553,6.815,6.553
-          c4.313,0,7.073-2.934,7.073-6.553C13.807,2.85,11.13,0,6.902,0z M0.345,62.888h13.114V18.074H0.345V62.888z M48.906,18.705
-          c-4.189,0-8.471-0.866-13.029,6.204h-0.256l-0.23-6.831H23.782c0.174,3.708,0.196,9.245,0.196,14.507v30.303h13.113V36.992
-          c0-1.215,0.17-2.42,0.51-3.285c0.861-2.414,3.018-4.917,6.645-4.917c4.744,0,6.646,3.708,6.646,9.139v24.959H64V36.291
-          C64,23.869,57.531,18.705,48.906,18.705z"/>
+		c4.313,0,7.073-2.934,7.073-6.553C13.807,2.85,11.13,0,6.902,0z M0.345,62.888h13.114V18.074H0.345V62.888z M48.906,18.705
+		c-4.189,0-8.471-0.866-13.029,6.204h-0.256l-0.23-6.831H23.782c0.174,3.708,0.196,9.245,0.196,14.507v30.303h13.113V36.992
+		c0-1.215,0.17-2.42,0.51-3.285c0.861-2.414,3.018-4.917,6.645-4.917c4.744,0,6.646,3.708,6.646,9.139v24.959H64V36.291
+		C64,23.869,57.531,18.705,48.906,18.705z"/>
               </svg>
             </a>
           </li>
@@ -73,7 +128,7 @@
             </a>
           </li>
         </ul>
-        <span class="copyrights"> Copyrights reserved © </span>
+        <span class="copyrights"> Copyrights reserved ©. designed and hacked by me. </span>
         <svg xmlns="http://www.w3.org/2000/svg" id="navEdg_container" viewBox="0 0 222 600" preserveAspectRatio="none">
           <defs>
             <path id="navEdg1" d="M52 0c53.3 200 53.3 400 0 600h170V0H52z"/>
@@ -84,17 +139,192 @@
       </nav>
     </header>
     <div class="main_container inner">
-      <div class="title container">
-        <h1>Main title here</h1>
-        <p>optional description about the main title</p>
+      <div class="title-block transition">
+        <div class="container">
+          <h1>My Projects</h1>
+          <p>A collection of "deliveries" that I'm proud of. </p>
+        </div>
       </div>
-      <p class="full block">full block of regular body text here. </p>
+      <div class="container all-projects">
+        <div class="flex">
+
+          <div class="col col--6 proj-unit">
+            <div class="proj-container">
+              <a href="#" class="proj-name">
+                project title here
+              </a>
+              <div class="thumb">
+                <svg viewBox="0 0 280 280">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path class="r-p" d="M470 290H10V10h460v280z"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="proj-description">
+                <span>UI/UX . visual design . web animation</span>
+                <p>Small description here about this project to give users idea about the project.</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col col--6 col__offset--6 proj-unit">
+            <div class="proj-container">
+              <a href="#" class="proj-name">
+                project title here
+              </a>
+              <div class="proj-description">
+                <span>UI/UX . visual design . web animation</span>
+                <p>Small description here about this project to give users idea about the project.</p>
+              </div>
+              <div class="thumb">
+                <svg viewBox="0 0 280 280">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path class="r-p" d="M470 290H10V10h460v280z"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col col--6 proj-unit">
+            <div class="proj-container">
+              <a href="#" class="proj-name">
+                project title here
+              </a>
+              <div class="proj-description">
+                <span>UI/UX . visual design . web animation</span>
+                <p>Small description here about this project to give users idea about the project.</p>
+              </div>
+              <div class="thumb">
+                <svg viewBox="0 0 280 280">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path class="r-p" d="M470 290H10V10h460v280z"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col col--6 col__offset--6 proj-unit">
+            <div class="proj-container">
+              <a href="#" class="proj-name">
+                project title here
+              </a>
+              <div class="proj-description">
+                <span>UI/UX . visual design . web animation</span>
+                <p>Small description here about this project to give users idea about the project.</p>
+              </div>
+              <div class="thumb">
+                <svg viewBox="0 0 280 280">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path class="r-p" d="M470 290H10V10h460v280z"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col col--6 proj-unit">
+            <div class="proj-container">
+              <a href="#" class="proj-name">
+                project title here
+              </a>
+              <div class="proj-description">
+                <span>UI/UX . visual design . web animation</span>
+                <p>Small description here about this project to give users idea about the project.</p>
+              </div>
+              <div class="thumb">
+                <svg viewBox="0 0 280 280">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path class="r-p" d="M470 290H10V10h460v280z"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col col--6 col__offset--6 proj-unit">
+            <div class="proj-container">
+              <a href="#" class="proj-name">
+                project title here
+              </a>
+              <div class="proj-description">
+                <span>UI/UX . visual design . web animation</span>
+                <p>Small description here about this project to give users idea about the project.</p>
+              </div>
+              <div class="thumb">
+                <svg viewBox="0 0 280 280">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path class="r-p" d="M470 290H10V10h460v280z"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col col--6 proj-unit">
+            <div class="proj-container">
+              <a href="#" class="proj-name">
+                project title here
+              </a>
+              <div class="proj-description">
+                <span>UI/UX . visual design . web animation</span>
+                <p>Small description here about this project to give users idea about the project.</p>
+              </div>
+              <div class="thumb">
+                <svg viewBox="0 0 280 280">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path class="r-p" d="M470 290H10V10h460v280z"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col col--6 col__offset--6 proj-unit">
+            <div class="proj-container">
+              <a href="#" class="proj-name">
+                project title here
+              </a>
+              <div class="proj-description">
+                <span>UI/UX . visual design . web animation</span>
+                <p>Small description here about this project to give users idea about the project.</p>
+              </div>
+              <div class="thumb">
+                <svg viewBox="0 0 280 280">
+                  <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                      <path class="r-p" d="M470 290H10V10h460v280z"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 
+
+
+
 </body>
 <script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 <script src="js/TweenMax.min.js"></script>
+<script src="js/animation.gsap.min.js"></script>
 <script src="js/MorphSVGPlugin.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/inner.js"></script>
 </html>
