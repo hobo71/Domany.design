@@ -5,6 +5,7 @@
         var master = new TimelineMax(), //my master timeline
             mainContainer = $('.main_container'),
             sky = $('.main-Scene'),
+            text = $('.text'),
             road = $('.road'),
             staggerIn = $('.stagger_in'),
             roadPath = $('.road_path'),
@@ -65,7 +66,7 @@
             .to(starsContainer, globalDuration, { opacity:'1',ease: Power4.easeOut },0)
             // .to(spotLight, .1, { autoAlpha:'1',ease: Power4.easeOut },0)
             .to(birdBody, globalDuration, { autoAlpha:0,ease: Power4.easeOut },0)
-            .to(moon, 1.5, { top:'150px',ease: Back.easeInOut.config(1)},0)
+            .to(moon, 1.5, { top:'30%',ease: Back.easeInOut.config(1)},0)
             .to(sun, 1.5, { top:'700px',ease: Back.easeInOut.config(1)},0);
 
           return tl;
@@ -128,8 +129,11 @@
 
         //scene slide in animation
         function sceneInAnimation() {
-            var tl = new TimelineMax({delay:.5}); //my reapeated timeline
-            tl.staggerFrom(staggerIn, .7, { bottom: "-10%", scaleY: "0", ease: Back.easeOut.config(1.5) }, -.05)
+            var tl = new TimelineMax({delay:.5});
+
+            tl
+                .set([staggerIn,road,text,sun],{display: 'block'})
+                .staggerFrom(staggerIn, .7, { bottom: "-10%", scaleY: "0", ease: Back.easeOut.config(1.5) }, -.05)
                 .from(road, .7, { bottom: '-30%', height: "0", ease: Power3.easeOut}, 0)
                 .to(scooter, 5, { left: 0,right:0, ease: Power2.easeOut }, 1)
                 .from(sun,1.5, { scale: 0,ease: Elastic.easeOut.config(1, 0.5),delay:.8}, 0);
