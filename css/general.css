@@ -468,19 +468,19 @@ img {
 }
 .text p{
     font-size: 1.3rem;
+    font-weight: 100;
 }
 .text p span{
-    color:#1e9acc ;
+    font-weight: 500;
 }
 .btn{
     color: #fff;
     position: relative;
     margin:0 auto;
-    border: none;
-    outline: none;
-    display: table;
+    display: inline-block;
     background-color: transparent;
     width: 275px;
+    transition: none;
 }
 .btn span{
     position: absolute;
@@ -491,9 +491,10 @@ img {
     display: inline-block;
     margin: auto;
     z-index: 10;
-    height: 24px;
+    height: 21px;
     letter-spacing: inherit;
     font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
 }
 #btn1{
     fill:rgba(255,255,255,.2);
