@@ -19,19 +19,7 @@
 <body>
 
 <div class="wrapper">
-  <svg class="hidden">
-    <defs>
-      <path class="r-out" d="M470 290H10V10h460c13.3 95.1 13.3 188.4 0 280z"/>
-      <path class="r-in" d="M470 290H10V10h460c-14.1 93.3-14.1 186.7 0 280z"/>
-      <path class="l-out" d="M470 290H10C-3.3 196.7-3.3 103.3 10 10h460v280z"/>
-      <path class="l-in" d="M470 290H10c14-93.3 14-186.7 0-280h460v280z"/>
-      <path class="t-out" d="M470 290H10V10C163.3-3.3 316.7-3.3 470 10v280z"/>
-      <path class="t-in" d="M470 290H10V10c153.3 13.5 306.7 13.5 460 0v280z"/>
-      <path class="b-out" d="M470 290c-153.3 13.3-306.7 13.3-460 0V10h460v280z"/>
-      <path class="b-in" d="M470 290c-153.3-14.4-306.7-14.4-460 0V10h460v280z"/>
-    </defs>
 
-  </svg>
   <div class="overlay transition slow fade"></div>
   <header>
     <a href="index.html" class="logo">
@@ -136,29 +124,53 @@
       <div class="container flex flex--middle">
         <div class="col col--12">
           <h1>Hire me</h1>
-          <p>I'm available for hiring, just shoot me a message below.</p>
+          <p>Do you need a design delivery? just shoot me a message below.</p>
         </div>
       </div>
     </div>
     <div class="container">
       <form class="contact_form" name="contact" method="POST" netlify action="/success.html">
         <div class="form_row">
-          <label>
+          <label for="name">
             <span>Your Name:</span>
-            <input type="text" name="name">
           </label>
+          <div class="input_container">
+            <input class="input_item" type="text" name="name" id="name">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 26" preserveAspectRatio="none">
+              <defs>
+                <path class="input2" d="M270 21c-90 2.2-180 2.2-270 0V5c90-3 180-3 270 0v16z"/>
+              </defs>
+              <path class="input1" stroke="none" d="M270 21H0V5h270v16z"/>
+            </svg>
+          </div>
         </div>
         <div class="form_row">
-          <label>
+          <label for="email">
             <span>Your Email:</span>
-            <input type="email" name="email">
           </label>
+          <div class="input_container">
+            <input class="input_item" type="email" name="email" id="email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 26" preserveAspectRatio="none">
+              <defs>
+                <path class="input2" d="M270 21c-90 2.2-180 2.2-270 0V5c90-3 180-3 270 0v16z"/>
+              </defs>
+              <path class="input1" stroke="none" d="M270 21H0V5h270v16z"/>
+            </svg>
+          </div>
         </div>
-        <div class="form_row">
-          <label>
+        <div class="form_row message_row">
+          <label for="message">
             <span>Message:</span>
-            <textarea name="message"></textarea>
           </label>
+          <div class="input_container">
+            <textarea class="input_item" name="message" id="message"></textarea>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 26" preserveAspectRatio="none">
+              <defs>
+                <path class="input2" d="M270 21c-90 2.2-180 2.2-270 0V5c90-3 180-3 270 0v16z"/>
+              </defs>
+              <path class="input1" stroke="none" d="M270 21H0V5h270v16z"/>
+            </svg>
+          </div>
         </div>
         <div class="form_row">
           <button type="submit" class="btn">
