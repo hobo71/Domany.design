@@ -141,9 +141,9 @@
       </div>
     </div>
     <div class="container flex flex--middle form_container">
-      <div class="error_container"></div>
       <div class="col col--12 col__md--6">
         <div class="contact_artwork">
+          <div class="error_container" id="contact_error"></div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 696.9 634.8">
             <circle opacity=".3" fill="#FFC55F" cx="322.1" cy="320.6" r="300"/>
             <path fill="#F9AF95" d="M448.6 498.6c-17.5 0-32.5-13-34.5-30.5-2.5-19 11-37 30-39.5 87-11.5 148-110.5 162.5-202.5 3-19 21-32 40-29s32 21 29 40c-18 114-95.5 244-222.5 260.5-1.5.5-3 1-4.5 1z"/>
@@ -218,7 +218,7 @@
               <span>Your Name:</span>
             </label>
             <div class="input_container">
-              <input class="input_item" type="text" name="name" id="name" required>
+              <input class="input_item" type="text" name="name" id="name">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 26" preserveAspectRatio="none">
                 <defs>
                   <path class="input2" d="M270 21c-90 2.2-180 2.2-270 0V5c90-3 180-3 270 0v16z"/>
@@ -232,7 +232,7 @@
               <span>Your Email:</span>
             </label>
             <div class="input_container">
-              <input class="input_item" type="email" name="email" id="email" required>
+              <input class="input_item" type="email" name="email" id="email">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 26" preserveAspectRatio="none">
                 <defs>
                   <path class="input2" d="M270 21c-90 2.2-180 2.2-270 0V5c90-3 180-3 270 0v16z"/>
@@ -246,7 +246,7 @@
               <span>Message:</span>
             </label>
             <div class="input_container">
-              <textarea class="input_item" name="message" id="message" required></textarea>
+              <textarea class="input_item" name="message" id="message"></textarea>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 26" preserveAspectRatio="none">
                 <defs>
                   <path class="input2" d="M270 21c-90 2.2-180 2.2-270 0V5c90-3 180-3 270 0v16z"/>
@@ -277,7 +277,6 @@
 </body>
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/ScrollMagic.min.js"></script>
-<!--<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>-->
 <script src="js/TweenMax.min.js"></script>
 <script src="js/animation.gsap.min.js"></script>
 <script src="js/MorphSVGPlugin.min.js"></script>
